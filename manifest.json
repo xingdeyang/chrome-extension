@@ -1,0 +1,24 @@
+﻿{
+	"manifest_version": 2,
+	"name": "cookie listener",
+  "description": "监控页面cookie变化情况",
+	"version": "0.0.1",
+	"background": {
+      "scripts": ["background.js"]
+  },
+  "content_scripts": [{
+    "matches": ["https://*.yunzhijia.com/*"],
+    "js": ["init.js"]
+  }],
+	"permissions": [
+    "tabs",
+    "notifications",
+    "cookies",
+    "*://*.yunzhijia.com/"
+  ],
+  "browser_action": {
+      "default_title": "my cookie listener",
+      "default_icon": "cnblogs_38.png",
+      "default_popup": "popup.html"
+  }
+}
